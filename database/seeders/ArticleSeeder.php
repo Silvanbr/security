@@ -46,7 +46,7 @@ class ArticleSeeder extends Seeder
             'excerpt' => 'Discover how FooBar is revolutionizing the way people care for their foos and guinea
                             pigs. Say goodbye to stress and hello to seamless management.',
             'body' => '<p>FooBar isn\'t just for nightlife – it\'s also your ultimate companion for managing foos
-                        and guinea pigs. With its user-friendly interface and innovative features, FooBar
+                        and guinea pigs. With its userSeeder-friendly interface and innovative features, FooBar
                         simplifies the process of caring for your furry friends.</p>
 
                         <p><strong>Customized Care</strong></p>
