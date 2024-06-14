@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BarController;
+use App\Http\Controllers\Errorcontroller;
+use App\Http\Controllers\ErrorTestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
@@ -28,3 +30,5 @@ Route::get('/', function () {
 Route::resource('/articles', ArticleController::class);
 Route::resource('/bars', BarController::class);
 Route::resource('/users', UserController::class);
+Route::get('/trigger-error', [ErrorTestController::class, 'triggerError']);
+Route::resource("/error", Errorcontroller::class);
