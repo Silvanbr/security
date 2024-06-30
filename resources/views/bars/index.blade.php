@@ -38,6 +38,13 @@
               {{$bar->user->name}}
         @endforeach
         {{$bars->links()}}
-
+         <script>
+             window.addEventListener('beforeunload', function () {
+                 if (!localStorage.getItem('rememberMe')) {
+                     // Stuur een AJAX verzoek om de sessie te vernietigen
+                     navigator.sendBeacon('/logout');
+                 }
+             });
+         </script>
     </div>
 </x-main>

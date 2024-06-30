@@ -71,6 +71,14 @@
                     <p>PROJECT FOOTER HERE</p>
                 </div>
             </div>
+            <script>
+                window.addEventListener('beforeunload', function () {
+                    if (!localStorage.getItem('rememberMe')) {
+                        // Stuur een AJAX verzoek om de sessie te vernietigen
+                        navigator.sendBeacon('/logout');
+                    }
+                });
+            </script>
         </footer>
 
     </body>

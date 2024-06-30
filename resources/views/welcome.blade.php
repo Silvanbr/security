@@ -1,6 +1,12 @@
 <x-article>
     <x-slot name="title">Welcome to the HZ HBO-ICT FPR1-TOETS01 exam template app</x-slot>
     <x-slot name="subtitle">This is the home page</x-slot>
+    <a href="{{ route('login') }}" class="button is-primary is-pulled-right">
+        login
+    </a>
+    <a href="{{ route('register') }}" class="button is-primary is-pulled-right">
+        register
+    </a>
     <div class="columns">
 
         <div class="column is-8-desktop is-12-tablet">
@@ -22,7 +28,7 @@
                 </p>
                 <p>
 
-                    In a world where time is precious and options are plentiful, FooBar stands out as the ultimate solution for anyone looking to make the most of their nightlife experience. From discovering hidden gems to seamlessly managing reservations, FooBar is the go-to app for foos and bar enthusiasts everywhere. Download FooBar today and elevate your nightlife experience to new heights.                </p>
+                    In a world where time is precious and options are plentiful, FooBar stands out as the ultimate solution for anyone looking to make the most of their nightlife experience. From discovering hidden gems to seamlessly managing reservations, FooBar is the go-to app for foos and bar enthusiasts everywhere. Download FooBar today and elevate your nightlife experience to new heights.
                 </p>
             </article>
         </div>

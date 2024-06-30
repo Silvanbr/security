@@ -43,7 +43,7 @@
         </div>
     </div>
 </nav>
-<form method="POST" action="{{ url('/login') }}">
+<form method="POST" action="{{ url('/login') }}" id="loginForm">
     @csrf
     <div>
         <label for="email">Email</label>
@@ -53,9 +53,11 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
     </div>
-    <div>
-        <input type="checkbox" id="remember" name="remember">
-        <label for="remember">Onthoud mij</label>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        <label class="form-check-label" for="remember">
+            Remember Me
+        </label>
     </div>
     <div>
         <button class="button" type="submit">Login</button>
@@ -89,6 +91,23 @@
         </div>
     </div>
 </footer>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function() {
+        let rememberMe = document.getElementById('remember').checked;
+        if (rememberMe) {
+            localStorage.setItem('rememberMe', 'true');
+        } else {
+            localStorage.removeItem('rememberMe');
+        }
+    });
 
+    window.addEventListener('beforeunload', function () {
+        if (!localStorage.getItem('rememberMe')) {
+            navigator.sendBeacon('{{ route('logout') }}', new URLSearchParams({
+                _token: '{{ csrf_token() }}'
+            }));
+        }
+    });
+</script>
 </body>
 </html>

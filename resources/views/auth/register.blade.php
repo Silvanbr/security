@@ -56,6 +56,7 @@
     <div>
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
+        <p>-8 characters or longer-</p>
     </div>
     <div>
         <label for="password_confirmation">Confirm Password</label>
